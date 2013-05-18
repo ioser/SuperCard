@@ -7,13 +7,21 @@
 //
 
 #import "SuperCardViewController.h"
+#import "PlayingCardView.h"
 
 @interface SuperCardViewController ()
+
+@property (weak, nonatomic) IBOutlet PlayingCardView *playingCardView;
 
 @end
 
 @implementation SuperCardViewController
 
+- (void)setPlayingCardView:(PlayingCardView *)playingCardView {
+	_playingCardView = playingCardView;
+	playingCardView.rank = 13;
+	playingCardView.suit = @"♥";
+}
 - (void)viewDidLoad
 {
     [super viewDidLoad];
