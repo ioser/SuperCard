@@ -12,7 +12,31 @@
 #define CORNER_SCALE_FACTOR 0.20
 #define CORNER_OFFSET 2.0
 
+@interface PlayingCardView ()
+
+@property (nonatomic) CGFloat faceCardScaleFactor;
+
+@end
+
+
 @implementation PlayingCardView
+
+@synthesize faceCardScaleFactor = _faceCardScaleFactor;
+
+#define DEFAULT_FACE_CARD_SCALE_FACTOR 0.80
+
+- (CGFloat)faceCardScaleFactor {
+	if (_faceCardScaleFactor == 0.0) {
+		_faceCardScaleFactor = DEFAULT_FACE_CARD_SCALE_FACTOR;
+	}
+	
+	return _faceCardScaleFactor;
+}
+
+- (void)setFaceCardScaleFactor:(CGFloat)faceCardScaleFactor {
+	_faceCardScaleFactor = faceCardScaleFactor;
+	[self setNeedsDisplay]; // Redraw everything.
+}
 
 - (void)setup {
 	// Do initialization
@@ -79,6 +103,23 @@
 	[self popContext];
 }
 
+- (void)drawPips {
+	// See downloaded SuperCard project from Stanford website
+}
+
+- (void)drawCenter {
+	NSString *imageName = [NSString stringWithFormat:@"%@%@.jpg", [self rankAsString], self.suit];
+	UIImage *faceImage = [UIImage imageNamed:imageName];
+	if (faceImage != nil) {
+		CGRect imageRect = CGRectInset(self.bounds,
+									   self.bounds.size.width * (1.0 - self.faceCardScaleFactor),
+									   self.bounds.size.height * (1.0 - self.faceCardScaleFactor));
+		[faceImage drawInRect:imageRect];
+	} else {
+		[self drawPips];
+	}
+}
+
 // Only override drawRect: if you perform custom drawing.
 // An empty implementation adversely affects performance during animation.
 - (void)drawRect:(CGRect)rect
@@ -94,6 +135,8 @@
 	[roundedRect stroke];
 	
 	[self drawPlayingCardCorners];
+	
+	[self drawCenter];
 }
 
 
