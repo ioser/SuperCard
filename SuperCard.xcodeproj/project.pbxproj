@@ -43,6 +43,7 @@
 		9A673DFC17474735008DB1AB /* MainStoryboard.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 9A673DFA17474735008DB1AB /* MainStoryboard.storyboard */; };
 		9A673DFF17474735008DB1AB /* SuperCardViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A673DFE17474735008DB1AB /* SuperCardViewController.m */; };
 		9A673E07174747A5008DB1AB /* PlayingCardView.m in Sources */ = {isa = PBXBuildFile; fileRef = 9A673E06174747A5008DB1AB /* PlayingCardView.m */; };
+		9ABEFFE71755CD4300141DC5 /* cardback.png in Resources */ = {isa = PBXBuildFile; fileRef = 9ABEFFE61755CD4300141DC5 /* cardback.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -88,6 +89,7 @@
 		9A673DFE17474735008DB1AB /* SuperCardViewController.m */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.objc; path = SuperCardViewController.m; sourceTree = "<group>"; };
 		9A673E05174747A5008DB1AB /* PlayingCardView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; name = PlayingCardView.h; path = SuperCard/PlayingCardView.h; sourceTree = "<group>"; };
 		9A673E06174747A5008DB1AB /* PlayingCardView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; name = PlayingCardView.m; path = SuperCard/PlayingCardView.m; sourceTree = "<group>"; };
+		9ABEFFE61755CD4300141DC5 /* cardback.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = cardback.png; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -107,6 +109,7 @@
 		9A411BE1174DE34800E9A076 /* Face Card Images */ = {
 			isa = PBXGroup;
 			children = (
+				9ABEFFE61755CD4300141DC5 /* cardback.png */,
 				9A411BE2174DE34800E9A076 /* J♠.jpg */,
 				9A411BE3174DE34800E9A076 /* J♠@2x.jpg */,
 				9A411BE4174DE34800E9A076 /* J♣.jpg */,
@@ -273,6 +276,7 @@
 				9A411C0F174DE34800E9A076 /* Q♥@2x.jpg in Resources */,
 				9A411C10174DE34800E9A076 /* Q♦.jpg in Resources */,
 				9A411C11174DE34800E9A076 /* Q♦@2x.jpg in Resources */,
+				9ABEFFE71755CD4300141DC5 /* cardback.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
