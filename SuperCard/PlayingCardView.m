@@ -114,6 +114,22 @@
 	[self setNeedsDisplay]; // Redraw everything.
 }
 
+- (void)flipCard {
+	[UIView transitionWithView:self duration:0.5
+					   options:UIViewAnimationOptionTransitionFlipFromLeft animations:^{
+						self.faceUp = !self.faceUp;
+					   }
+					completion:NULL];
+}
+
+- (void)pinch:(UIPinchGestureRecognizer *)pinchGesture {
+	if ((pinchGesture.state == UIGestureRecognizerStateChanged) ||
+		(pinchGesture.state == UIGestureRecognizerStateEnded)) {
+		self.faceCardScaleFactor *= pinchGesture.scale;
+		pinchGesture.scale = 1;
+	}
+}
+
 - (void)setup {
 	// Do initialization
 }

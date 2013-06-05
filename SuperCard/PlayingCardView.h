@@ -14,4 +14,7 @@
 @property (nonatomic, strong) NSString *suit;
 @property (nonatomic) BOOL faceUp;
 
+- (void)flipCard;
+- (void)pinch:(UIPinchGestureRecognizer *)pinchGesture;
+
 @end
