@@ -17,6 +17,7 @@
 @interface PlayingCardView ()
 
 @property (nonatomic) CGFloat faceCardScaleFactor;
+@property (nonatomic) int pipDrawnCount;
 
 @end
 
@@ -80,9 +81,12 @@
                                     middle.y-pipSize.height/2.0-voffset*self.bounds.size.height
                                     );
     [attributedSuit drawAtPoint:pipOrigin];
+	self.pipDrawnCount++;
+	
     if (hoffset) {
         pipOrigin.x += hoffset*2.0*self.bounds.size.width;
         [attributedSuit drawAtPoint:pipOrigin];
+		self.pipDrawnCount++;
     }
     if (upsideDown) [self popContext];
 }
@@ -230,11 +234,14 @@
 	[self drawPlayingCardCorners];
 	
 	[self drawCenter];
+	
+	NSLog(@"Attributed pip string drawn %d times.", self.pipDrawnCount);
 }
 
 
 - (void)setRank:(NSUInteger)rank {
 	_rank = rank;
+	self.pipDrawnCount = 0;
 	[self setNeedsDisplay];
 }
 
